@@ -1,0 +1,29 @@
+# Affiliate Marketing Website - Render Infrastructure Configuration
+# ================================================================
+# Static site deployment for the Affiliate Marketing Website.
+#
+# Cost: $0/month (free tier)
+
+services:
+  - type: web
+    name: affiliate-marketing-website
+    env: static
+    buildCommand: yarn install && yarn build
+    staticPublishPath: ./build
+    envVars:
+      - key: NODE_VERSION
+        value: "18"
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
