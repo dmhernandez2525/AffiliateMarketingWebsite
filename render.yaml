@@ -7,7 +7,7 @@
 services:
   - type: web
     name: affiliate-marketing-site
-    env: static
+    runtime: static
     buildCommand: yarn install && yarn build
     staticPublishPath: ./build
     envVars:
