@@ -3,7 +3,8 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
+  max-height: 200px;
   pointer-events: none;
 }
 
@@ -22,10 +23,23 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 1rem;
+}
+
+.App-header p {
+  margin: 0.5rem 0;
+  padding: 0 1rem;
+  word-break: break-word;
+}
+
+.App-header code {
+  font-size: 0.9em;
 }
 
 .App-link {
   color: #61dafb;
+  padding: 0.75rem 1.5rem;
+  display: inline-block;
 }
 
 @keyframes App-logo-spin {
@@ -34,5 +48,24 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+  .App-logo {
+    height: 25vmin;
+    max-height: 120px;
+  }
+
+  .App-header {
+    font-size: calc(10px + 1.5vmin);
+    padding: 1rem 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    padding: 1.5rem 1rem;
   }
 }
